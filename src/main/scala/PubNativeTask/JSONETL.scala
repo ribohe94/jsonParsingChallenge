@@ -14,7 +14,7 @@ object JSONETL extends Mapper {
     val clicks = readClicks(inputDirectory + "clicks")
     val impressions = readImpressions(inputDirectory + "impressions")
 
-    clicks.zip(impressions)
+    (clicks,impressions)
   }
 
   def parseJSONintoList(stringJSON: String): List[Map[String, Object]] = mapper.readValue[List[Map[String, Object]]](stringJSON)

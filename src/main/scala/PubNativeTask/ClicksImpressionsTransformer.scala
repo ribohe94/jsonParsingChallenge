@@ -3,15 +3,15 @@ package PubNativeTask
 import scala.collection.immutable.Map
 
 object ClicksImpressionsTransformer {
-  def calculateMetrics(allJSONFilesAsString: List[(String, String)]) = {
+  def calculateMetrics(allJSONFilesAsString: (List[String], List[String])) = {
     val (clicksList, impressionsList) = convertClicksAndImpToScala(allJSONFilesAsString)
     val (clicksRenamed, impressions) = reduceAndRenameClicksAndImp(clicksList, impressionsList)
     groupAndJoinClicksAndImpressions(clicksRenamed, impressions)
   }
 
-  private def convertClicksAndImpToScala(allJSONFilesAsString: List[(String, String)]) = {
-    val clicksList = allJSONFilesAsString.map(clickFile => JSONETL.parseJSONintoList(clickFile._1))
-    val impressionsList = allJSONFilesAsString.map(impressionFile => JSONETL.parseJSONintoList(impressionFile._2))
+  private def convertClicksAndImpToScala(allJSONFilesAsString: (List[String], List[String])) = {
+    val clicksList = allJSONFilesAsString._1.map(clickFile => JSONETL.parseJSONintoList(clickFile))
+    val impressionsList = allJSONFilesAsString._2.map(impressionFile => JSONETL.parseJSONintoList(impressionFile))
     (clicksList, impressionsList)
   }
 
