@@ -13,6 +13,3 @@ buildNumber.properties
 
 # ingnore intellij
 .idea/*
-
-# Ignore data
-data/*

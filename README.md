@@ -1,12 +1,18 @@
 # jsonParsingChallenge
 Data Engineering challenge
 
-I have opted for excluding the input data from the repo for now. To run this project, add the clicks and impressions json files as shown below as well as creating an output directory.
+Input/Output files
 
 ```
-data/clicks/clicks.json
-data/impressions/impressions.json
-data/output/
+Input:
+data/clicks/*.json
+data/impressions/*.json
+
+Output:
+data/output/metrics.json
+data/output/recommendations.json
+data/output/recommendations.json/_SUCCESS
+data/output/recommendations.json/part-00000-b70f97a5-94b4-4dde-8460-8b55ab6ab8a9-c000.json
 ```
 
 ## Steps I took
